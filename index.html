@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>রক্তদাতা তথ্য সংগ্রহ ফর্ম</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffe6e6;
+            color: #660000;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid #990000;
+        }
+        .form-heading {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #990000;
+        }
+        .btn-primary {
+            background-color: #cc0000;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #990000;
+        }
+        label {
+            font-weight: bold;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            border: 1px solid #cc0000;
+            color: #660000;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: #990000;
+            box-shadow: 0 0 5px rgba(153, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="form-heading">রক্তদাতা তথ্য সংগ্রহ ফর্ম</h2>
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScUtimQXbTCaDN-D4QuoF63m_kmE0U50mvfT7y76PuKyN2jdg/formResponse" method="POST" id="bloodDonorForm">
+            <div class="form-group">
+                <label for="name">১। নাম</label>
+                <input type="text" id="name" name="entry.2129248928" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">২। ফোন নাম্বার</label>
+                <input type="text" id="phone" name="entry.1449322693" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="bloodGroup">৩। রক্তের গ্রুপ</label>
+                <select id="bloodGroup" name="entry.960209126" class="form-control" required>
+                    <option value="">-- রক্তের গ্রুপ নির্বাচন করুন --</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="permanentAddress">৪। স্থায়ী ঠিকানা</label>
+                <textarea id="permanentAddress" name="entry.2138310824" class="form-control" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="currentAddress">৫। বর্তমান ঠিকানা</label>
+                <textarea id="currentAddress" name="entry.961754571" class="form-control" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="lastDonationDate">৬। রক্ত দানের সর্বশেষ তারিখ</label>
+                <input type="date" id="lastDonationDate" name="entry.1499056499" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="profession">৭। পেশা</label>
+                <input type="text" id="profession" name="entry.696498588" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="birthYear">৮। জন্মসাল</label>
+                <input type="number" id="birthYear" name="entry.764229794" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="whatsappImo">৯। হোয়াটসঅ্যাপ/ইমু নাম্বার</label>
+                <input type="text" id="whatsappImo" name="entry.17958917" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">জমা দিন</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('bloodDonorForm').addEventListener('submit', function (event) {
+            // After form submission, redirect to thank_you.html
+            setTimeout(() => {
+                window.location.href = 'res.html';
+            }, 100); // Adjust delay if needed
+        });
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
