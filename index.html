@@ -93,7 +93,8 @@
             </div>
             <div class="form-group">
                 <label for="birthYear">৮। জন্মসাল</label>
-                <input type="date" id="birthYear" name="entry.764229794" class="form-control" required>
+                <input type="date" id="birthYear" name="entry.764229794" class="form-control" min="1985" max="2025" required>
+                <small class="text-danger" id="birthYearError" style="display: none;">শুধুমাত্র ১৯৮৫ থেকে ২০২৫ পর্যন্ত সঠিক সাল প্রদান করুন।</small>
             </div>
             <div class="form-group">
                 <label for="whatsappImo">৯। হোয়াটসঅ্যাপ/ইমু নাম্বার</label>
@@ -109,6 +110,23 @@
                 window.location.href = 'res.html';
             }, 600); // Adjust delay if needed
         });
+
+        document.getElementById('birthYear').addEventListener('input', function () {
+        const birthYearInput = this;
+        const birthYearValue = birthYearInput.value;
+        const errorElement = document.getElementById('birthYearError');
+        
+        // Regular expression to allow only English numeric characters
+        const isValidYear = /^[0-9]{4}$/.test(birthYearValue) && birthYearValue >= 1985 && birthYearValue <= 2025;
+        
+        if (!isValidYear) {
+            errorElement.style.display = 'block'; // Show error message
+            birthYearInput.classList.add('is-invalid'); // Add Bootstrap invalid class
+        } else {
+            errorElement.style.display = 'none'; // Hide error message
+            birthYearInput.classList.remove('is-invalid'); // Remove invalid class
+        }
+    });
     </script>
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
